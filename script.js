@@ -1,9 +1,11 @@
-(function () {
-    var buttons = Array.from(document.querySelectorAll('button'));
+var buttons = document.querySelector('#list');
 
-    buttons.forEach(function (button) {
-        button.onclick = function () {
-            alert('You have bought a ' + this.parentElement.querySelector('h2').textContent);
-        }
-    });
-})();
+buttons.onclick = function (e) {
+    var target = e.target;
+
+    if (target.tagName = 'BUTTON') {
+        var product = target.closest('li').querySelector('h2').textContent;
+        alert(product);
+    }
+}
+
